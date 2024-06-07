@@ -1,0 +1,37 @@
+{
+  "name": "theme-starter-boilerplate-theme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preview": "npm-run-all --parallel sync d",
+    "sync": "browser-sync start --proxy \"compasscareerscanada.test\" --files \"theme-starter-theme\" --no-notify --no-inject-changes",
+    "wp-build": "wp-scripts build --output-path=assets/js",
+    "wp-start": "wp-scripts start --output-path=assets/js",
+    "tailwind-watch": "npx tailwindcss -i ./src/styles/vendors/tailwind/_source.scss -o ./src/styles/vendors/tailwind/_tailwind.scss --watch",
+    "tailwind-build": "npx tailwindcss -i ./src/styles/vendors/tailwind/_source.scss -o ./src/styles/vendors/tailwind/_tailwind.scss",
+    "sass-dev": "npx sass --watch --no-source-map ./src/styles/styles.scss:./assets/css/styles.css",
+    "sass-prod": "npx sass --style=compressed --no-source-map ./src/styles/styles.scss:./assets/css/styles.css",
+    "dev": "npm-run-all --parallel wp-start tailwind-watch sass-dev",
+    "prod": "npm-run-all --sequential tailwind-build sass-prod wp-build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
+    "@tailwindcss/forms": "^0.5.7",
+    "@tailwindcss/typography": "^0.5.13",
+    "@wordpress/scripts": "^27.9.0",
+    "browser-sync": "^3.0.2",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.77.2",
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.0.4",
+    "@heroicons/react": "^2.1.3"
+  }
+}

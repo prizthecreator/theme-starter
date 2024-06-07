@@ -1,0 +1,25 @@
+.gform-theme--api,
+.gform-theme--framework {
+  --gf-color-primary: var(--primary-900) !important;
+  --gf-color-primary-darker: var(--primary-950) !important;
+  --gf-color-primary-lighter: var(--primary-700) !important;
+}
+
+.gform-theme--framework
+  .gfield--input-type-datepicker
+  .ginput_container_date
+  input {
+  --gf-local-width: 100% !important;
+}
+
+.gsection_title {
+  font-size: large;
+  font-weight: black;
+}
+
+.gform-theme--framework .gfield--type-section {
+  border-block-end: var(--gf-field-section-border-width) var(--gf-field-section-border-style) var(--gf-field-section-border-color);
+  padding-block-end: var(--gf-field-section-padding-y-end);
+  font-size: larger;
+  font-weight: 500;
+}

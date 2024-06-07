@@ -1,0 +1,37 @@
+.accordion {
+  position: relative;
+  overflow: hidden;
+  transition: 0.6s ease-in-out;
+  padding: 0.5rem;
+}
+.accordion-title {
+  margin: 0 35px 0 0;
+  font-weight: medium;
+}
+.accordion-content {
+  position: absolute;
+  opacity: 0;
+  transition: all 600ms ease-in-out;
+  padding: 0.5rem;
+}
+
+.accordion.active .accordion-content {
+  position: static;
+  opacity: 1;
+  border-radius: 0.5rem;
+}
+.accordion-toggle {
+  cursor: pointer;
+}
+.accordion-toggle:focus {
+  outline: 0;
+}
+.accordion-toggle .fa-times {
+  display: none;
+}
+.accordion.active .accordion-toggle .fa-times {
+  display: block;
+}
+.accordion.active .accordion-toggle .fa-chevron-down {
+  display: none;
+}

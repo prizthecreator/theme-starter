@@ -1,0 +1,85 @@
+.toggle-menu {
+  display: flex;
+  width: 30px;
+  height: 50px;
+  position: relative;
+  z-index: 98;
+}
+
+@media (min-width: 1024px) {
+  .toggle-menu {
+    display: none;
+  }
+}
+
+.toggle-menu i {
+  position: absolute;
+  height: 2px;
+  background: black;
+  width: 30px;
+  transition: all 0.3s;
+}
+
+.toggle-menu i:nth-child(1) {
+  top: 16px;
+}
+
+.toggle-menu i:nth-child(2) {
+  top: 24px;
+}
+
+.toggle-menu i:nth-child(3) {
+  top: 32px;
+}
+
+.toggle-menu.active i:nth-child(1) {
+  top: 25px;
+  transform: rotateZ(45deg);
+}
+
+.toggle-menu.active i:nth-child(2) {
+  background: transparent;
+  display: none;
+}
+
+.toggle-menu.active i:nth-child(3) {
+  top: 25px;
+  transform: rotateZ(-45deg);
+}
+
+
+
+#slide-out-menu {
+  translate: -100%;
+  transition: 300ms ease-in-out;
+  /* Hide scrollbar for WebKit (Chrome, Safari) */
+  /* Hide scrollbar for Firefox */
+  /* Hide scrollbar for Internet Explorer and Edge */
+}
+#slide-out-menu::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+#slide-out-menu::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  display: none;
+}
+#slide-out-menu::-moz-scrollbar {
+  width: 0;
+  display: none;
+}
+#slide-out-menu::-moz-scrollbar-thumb {
+  background-color: transparent;
+  display: none;
+}
+#slide-out-menu::-ms-scrollbar {
+  width: 0;
+  display: none;
+}
+#slide-out-menu::-ms-scrollbar-thumb {
+  background-color: transparent;
+}
+
+#slide-out-menu.open {
+  translate: 0;
+}
